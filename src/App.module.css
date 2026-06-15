@@ -1,0 +1,26 @@
+/* Esempio di CSS Module: il Lab 4 chiede ProductCard.module.css sullo stesso schema. */
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: system-ui, sans-serif;
+}
+.app h1 {
+  color: #1e2761;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid #e2e6ef;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.error {
+  color: #b00020;
+}
