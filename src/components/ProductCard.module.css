@@ -1,0 +1,62 @@
+/* CSS Module per ProductCard, stesso schema di App.module.css. */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border: 1px solid #e2e6ef;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0.5rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.imagePlaceholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f7;
+  border-radius: 6px;
+  color: #8a90a2;
+  font-size: 0.85rem;
+}
+
+.name {
+  color: #1e2761;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.category {
+  color: #8a90a2;
+}
+
+.addButton {
+  margin-top: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background: #1e2761;
+  color: #fff;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background: #2a357f;
+}
