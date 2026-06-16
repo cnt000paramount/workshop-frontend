@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './App.module.css';
 import { fetchProducts } from './api';
+import ProductCard from './components/ProductCard';
 import type { Product } from './types';
 
 export default function App() {
@@ -15,6 +16,11 @@ export default function App() {
       .finally(() => setLoading(false));
   }, []);
 
+  function handleAddToCart(product: Product) {
+    // Placeholder: per il Lab basta dimostrare il flusso del callback.
+    console.log('Aggiunto al carrello:', product.name);
+  }
+
   return (
     <main className={styles.app}>
       <h1>Catalogo Streaming</h1>
@@ -27,20 +33,9 @@ export default function App() {
         </p>
       )}
 
-      {/*
-        TODO (Lab 4 · Parte B): crea src/components/ProductCard.tsx con Claude Code,
-        poi SOSTITUISCI questa griglia "grezza" con:
-            {products.map((p) => (
-              <ProductCard key={p.id} product={p} onAddToCart={...} />
-            ))}
-      */}
       <div className={styles.grid}>
         {products.map((p) => (
-          <div key={p.id} className={styles.card}>
-            <strong>{p.name}</strong>
-            <span>{p.price.toLocaleString('it-IT', { style: 'currency', currency: 'EUR' })}</span>
-            {p.category && <small>{p.category}</small>}
-          </div>
+          <ProductCard key={p.id} product={p} onAddToCart={handleAddToCart} />
         ))}
       </div>
     </main>

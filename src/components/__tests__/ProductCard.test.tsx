@@ -18,7 +18,7 @@ describe('ProductCard', () => {
 
     expect(screen.getByText('Wireless Mouse')).toBeInTheDocument();
     // toLocaleString usa uno spazio insecabile prima del simbolo €.
-    expect(screen.getByText('29,99 €')).toBeInTheDocument();
+    expect(screen.getByText(/29,99\s*€/)).toBeInTheDocument();
     expect(screen.getByText('electronics')).toBeInTheDocument();
   });
 
